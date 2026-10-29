@@ -1,4 +1,5 @@
 FROM golang:1.24-bookworm AS builder
+ENV GOTOOLCHAIN=auto
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
@@ -14,4 +15,3 @@ COPY internal/ ./internal/
 ENV TEXT_ANALYSIS_PYTHON=python3
 ENV PYTHONUNBUFFERED=1
 CMD ["./app"]
-
