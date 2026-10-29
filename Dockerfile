@@ -1,4 +1,4 @@
-FROM golang:1.24-bookworm AS builder
+FROM golang:latest AS builder
 ENV GOTOOLCHAIN=auto
 WORKDIR /app
 COPY go.mod go.sum ./
